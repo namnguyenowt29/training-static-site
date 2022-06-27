@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo:ital@1&family=Open+Sans&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "Arvo", serif;
+  font-size: 1.75rem;
+  line-height: 36px;
+}
+
+h2 {
+  font-family: "Arvo", serif;
+  font-size: 1.25rem;
+  line-height: 32px;
+}
+
+/* Remove default margin and padding */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults and set font-size default value */
+html {
+  font-size: 16px;
+}
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.homepage {
+  background-color: #f3f3f3;
+}
+.homepage .blog-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(264px, 1fr));
+  gap: 1em;
+  padding: 0em 4.5em 3.375em;
+}
+.homepage .blog-list__item {
+  padding: 1.5em;
+  background-color: #ffffff;
+  position: relative;
+}
+.homepage .blog-list__item .title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150%;
+  color: #ffffff;
+}
+.homepage .blog-list__item img {
+  margin: 0em auto;
+  object-fit: cover;
+}
+.homepage .blog-list__item .overlay {
+  padding: 48px 56px 0px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.homepage .blog-list__item .overlay .view-more {
+  position: absolute;
+  right: 56px;
+  bottom: 48px;
+}
+.homepage .blog-list__item:nth-child(1) {
+  position: relative;
+  grid-row: 1/3;
+}
+.homepage .blog-list__item:nth-child(1) .title {
+  color: #2b2b2b;
+}
+.homepage .blog-list__item:nth-child(1) img {
+  margin-bottom: 1em;
+}
+.homepage .blog-list__item:nth-child(1) .view-more {
+  cursor: pointer;
+  position: absolute;
+  bottom: 2.05em;
+  right: 1.625em;
+}
+.homepage .blog-list__item:nth-child(3) {
+  display: flex;
+  gap: 1.5px;
+  gap: 1.5em;
+  grid-column: 3/5;
+}
+.homepage .blog-list__item:nth-child(3) .blog-description {
+  position: relative;
+}
+.homepage .blog-list__item:nth-child(3) .blog-description .view-more {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.homepage .blog-list__item:nth-child(3) .title {
+  color: #2b2b2b;
+}
+.homepage .blog-list__item:nth-child(1) .title, .homepage .blog-list__item:nth-child(3) .title {
+  position: unset;
+}
+.homepage .blog-list__item:nth-child(1) .views, .homepage .blog-list__item:nth-child(3) .views {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.5em;
+}
+.homepage .blog-list__item:nth-child(1) .views span, .homepage .blog-list__item:nth-child(3) .views span {
+  margin-left: 0.625em;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 143%;
+  color: #828282;
+}
+
+/*# sourceMappingURL=main.css.map */
