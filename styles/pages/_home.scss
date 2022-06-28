@@ -1,101 +1,495 @@
-// @media screen and (max-width: $bp-xl) {
-//   .homepage {
-//     .blog-list {
-//       grid-template-columns: repeat(3, 1fr) !important;
-//       &__item:nth-child(1) {
-//         grid-row: unset !important;
-//       }
-//       &__item:nth-child(3) {
-//         grid-column: unset !important;
-//       }
-//     }
-//   }
-// }
+$row-height: 224px;
+$lg-row-height: 180px;
 
 .homepage {
+  &__header,
+  &__introduction,
+  &__news {
+    padding: 0em 4.5em;
+    @include lg {
+      padding: 0em 3em;
+    }
+    @include md {
+      padding: 0em 2.5em;
+    }
+    @include sm {
+      padding: 0em 2em;
+    }
+    @include smallest {
+      padding: 0em 1.5em;
+    }
+  }
+}
+
+.homepage .homepage__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (min-width: $bp-sm) and (max-width: $bp-lg) {
+    & .btn--primary {
+      font-size: 0.875em;
+    }
+  }
+  @media screen and (max-width: $bp-sm) {
+    font-size: 0.5em;
+  }
+}
+
+.homepage .homepage__introduction {
+  position: relative;
+  padding-top: 25%;
+  background: $white url(#{$home-background}) no-repeat 60%;
+  h1 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 476px;
+    @media screen and (max-width: $bp-sm) {
+      top: 90%;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    @media screen and (max-width: 300px) {
+      top: 90%;
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+  }
+  @include lg {
+    padding-top: 30%;
+  }
+  @include md {
+    padding-top: 40%;
+  }
+  @include sm {
+    padding-top: 50%;
+  }
+  @include smallest {
+    padding-top: 100%;
+  }
+  @media screen and (max-width: 300px) {
+    background-size: contain;
+  }
+}
+
+.homepage .homepage__news {
   background-color: $light-gray;
-  .blog-list {
+  padding-top: 3em;
+  padding-bottom: 3.38em;
+  @include lg {
+    padding: 2.5em 3em 4em;
+  }
+  @include md {
+    padding: 2em 2.5em 3em;
+  }
+  @include sm {
+    padding: 1.5em 2em 2.5em;
+  }
+  @include smallest {
+    padding: 1em 1.5em 2em;
+  }
+
+  .controller {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5em;
+    span {
+      @include text-style(1em, 600, 1.5em, $red);
+    }
+  }
+
+  .news-list {
     display: grid;
-    grid-template-columns: repeat(4, minmax(264px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax($row-height, 1fr);
     gap: 1em;
-    padding: 0em 4.5em 3.375em;
-    // blog item style
+
+    @include lg {
+      grid-auto-rows: minmax($lg-row-height, 1fr);
+    }
+    @include md {
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: $lg-row-height;
+    }
+    @include sm {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: $lg-row-height;
+    }
+    @include smallest {
+      grid-template-columns: 1fr;
+      grid-auto-rows: minmax($row-height, 1fr);
+    }
     &__item {
-      padding: 1.5em;
       background-color: $white;
       position: relative;
-      .title {
-        @include text-style(1rem, 400, 150%, $white);
+      padding: 1.5em;
+      @include lg {
+        padding: 1em;
       }
-      img {
-        margin: 0em auto;
-        object-fit: cover;
+      @include md {
+        padding: 0.8em;
+      }
+      @include sm {
+        padding: 0.6em;
+      }
+      @include smallest {
+        padding: 0.4em;
       }
       .overlay {
-        padding: 48px 56px 0px;
         position: absolute;
         top: 0;
-        bottom: 0;
         left: 0;
         right: 0;
-        .view-more {
-          position: absolute;
-          right: 56px;
-          bottom: 48px;
+        bottom: 0;
+        background-color: $black;
+        opacity: 0.4;
+        margin: 1.5em;
+        border-radius: 0.3125em;
+        @include lg {
+          margin: 1em;
+        }
+        @include md {
+          margin: 0.8em;
+        }
+        @include sm {
+          margin: 0.6em;
+        }
+        @include smallest {
+          margin: 0.4em;
         }
       }
-    }
-    // style for item 1
-    &__item:nth-child(1) {
-      .title {
-        color: $text-black;
+      .thumbnail {
+        border-radius: 0.3125em;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @include smallest {
+          object-fit: fill;
+        }
       }
-      position: relative;
-      img {
-        margin-bottom: 1em;
+      p {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 3em 3.5em 0;
+        @include text-style(1em, 400, 1.5em, $white);
+        @include lg {
+          font-size: 0.875rem;
+          padding: 2.2em 2.5em 0;
+        }
+        @include md {
+          font-size: 0.875rem;
+          padding: 2em 2.3em 0;
+        }
+        @include sm {
+          font-size: 0.875rem;
+          padding: 1.8em 2em 0;
+        }
+        @include smallest {
+          font-size: 0.875rem;
+          padding: 1.5em 1.7em 0;
+        }
+      }
+      .view {
+        display: flex;
+        align-items: center;
+        & > span {
+          @include lg {
+            font-size: 0.875rem;
+          }
+        }
+        & > img {
+          margin-bottom: 0;
+          width: 1.5em;
+          height: 1.5em;
+          margin-right: 0.625em;
+        }
       }
       .view-more {
         cursor: pointer;
+        width: 2.5em;
+        height: 2.5em;
+        margin-bottom: 0;
         position: absolute;
-        bottom: 2.05em;
-        right: 1.625em;
+        bottom: 3em;
+        right: 3.5em;
+        @include lg {
+          width: 2em;
+          height: 2em;
+          bottom: 1.8em;
+          right: 2em;
+        }
+        @include md {
+          width: 2em;
+          height: 2em;
+          bottom: 1.3em;
+          right: 1.5em;
+        }
+        @include sm {
+          width: 2em;
+          height: 2em;
+          bottom: 1em;
+          right: 1.3em;
+        }
+        @include smallest {
+          width: 2em;
+          height: 2em;
+          bottom: 0.7em;
+          right: 1em;
+        }
       }
+    }
+    &__item--vertical {
       grid-row: 1 / 3;
-    }
-
-    // style for item 3
-    &__item:nth-child(3) {
-      display: flex;
-      gap: 1.5px;
-      .blog-description {
-        position: relative;
-        .view-more {
-          position: absolute;
-          bottom: 0;
-          right: 0;
-        }
+      position: relative;
+      @include md {
+        grid-row: unset;
+        padding: 0.8em;
       }
-      .title {
-        color: $text-black;
+      @include sm {
+        grid-row: unset;
+        padding: 0.6em;
       }
-      gap: 1.5em;
-      grid-column: 3 / 5;
-    }
-
-    &__item:nth-child(1),
-    &__item:nth-child(3) {
-      .title {
+      @include smallest {
+        grid-row: unset;
+        padding: 0.4em;
+      }
+      .overlay {
         position: unset;
+        background-color: unset;
+        margin: unset;
+        opacity: 1;
+        @include md {
+          position: absolute;
+          background-color: $black;
+          opacity: 0.4;
+          margin: 0.8em;
+        }
+        @include sm {
+          position: absolute;
+          background-color: $black;
+          opacity: 0.4;
+          margin: 0.6em;
+        }
+        @include smallest {
+          position: absolute;
+          background-color: $black;
+          opacity: 0.4;
+          margin: 0.4em;
+        }
       }
-      .views {
-        display: inline-flex;
-        align-items: center;
-        margin-top: 0.5em;
-        span {
-          margin-left: 0.625em;
-          @include text-style(0.875rem, 400, 143%, $text-gray);
+      p {
+        color: $black;
+        position: unset;
+        padding: 0em;
+        margin-bottom: 0.625em;
+        @include md {
+          color: $white;
+          font-size: 0.875rem;
+          padding: 2em 2.3em 0;
+          position: absolute;
+        }
+        @include sm {
+          color: $white;
+          font-size: 0.875rem;
+          padding: 1.8em 2em 0;
+          position: absolute;
+        }
+        @include smallest {
+          color: $white;
+          font-size: 0.875rem;
+          padding: 1.5em 1.7em 0;
+          position: absolute;
+        }
+      }
+      .view-more--white {
+        display: none;
+        @include md {
+          display: block;
+          width: 2em;
+          height: 2em;
+          bottom: 1.3em;
+          right: 1.5em;
+          position: absolute;
+        }
+        @include sm {
+          display: block;
+          width: 2em;
+          height: 2em;
+          bottom: 1em;
+          right: 1.3em;
+          position: absolute;
+        }
+        @include smallest {
+          display: block;
+          width: 2em;
+          height: 2em;
+          bottom: 0.7em;
+          right: 1em;
+          position: absolute;
+        }
+      }
+      .view {
+        @media (min-width: $bp-sm) and (max-width: $bp-lg) {
+          display: none;
+        }
+        @include smallest {
+          display: none;
+        }
+      }
+      .view-more {
+        position: absolute;
+        bottom: 1.5em;
+        right: 1.5em;
+        @include lg {
+          bottom: 1em;
+          right: 1em;
+        }
+        @media (min-width: $bp-sm) and (max-width: $bp-lg) {
+          display: none;
+        }
+        @include smallest {
+          display: none;
+        }
+      }
+      .thumbnail {
+        height: unset;
+        margin-bottom: 1em;
+        @media (min-width: $bp-sm) and (max-width: $bp-lg) {
+          height: 100%;
+          margin-bottom: 0;
+        }
+        @include smallest {
+          height: 100%;
+          margin-bottom: 0;
         }
       }
     }
+    &__item--horizontal {
+      grid-column: 3 / 5;
+      gap: 1.5em;
+      display: flex;
+      @media (min-width: $bp-sm) and (max-width: $bp-lg) {
+        grid-column: unset;
+      }
+      @include smallest {
+        grid-column: unset;
+      }
+      .overlay {
+        display: none;
+        @media (min-width: $bp-sm) and (max-width: $bp-lg) {
+          display: block;
+          background-color: $black;
+          opacity: 0.4;
+        }
+        @include smallest {
+          display: block;
+          background-color: $black;
+          opacity: 0.4;
+        }
+      }
+      .content {
+        position: unset;
+        background-color: unset;
+        margin: unset;
+        opacity: 1;
+        @media (min-width: $bp-sm) and (max-width: $bp-lg) {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          & > p {
+            color: $white;
+            padding: 2em 2.3em 0;
+          }
+        }
+        @media (max-width: $bp-sm) {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          & > p {
+            color: $white;
+            padding: 1.5em 1.7em 0;
+          }
+        }
+        .view {
+          @media (min-width: $bp-sm) and (max-width: $bp-lg) {
+            display: none;
+          }
+          @media (max-width: $bp-sm) {
+            display: none;
+          }
+        }
+        .view-more--white {
+          display: none;
+          @media (min-width: $bp-sm) and (max-width: $bp-lg) {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 2em;
+            height: 2em;
+            bottom: 1.3em;
+            right: 1.5em;
+          }
+          @media (max-width: $bp-sm) {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 2em;
+            height: 2em;
+            bottom: 0.7em;
+            right: 1em;
+          }
+        }
+        & > .view-more {
+          bottom: 1.5em;
+          right: 1.5em;
+          @include lg {
+            bottom: 1em;
+            right: 1em;
+          }
+          @media (min-width: $bp-sm) and (max-width: $bp-lg) {
+            display: none;
+          }
+          @media (max-width: $bp-sm) {
+            display: none;
+          }
+        }
+      }
+      p {
+        position: unset;
+        padding: 0;
+        color: $black;
+      }
+      .thumbnail {
+        width: unset;
+        height: auto;
+        @media (min-width: $bp-sm) and (max-width: $bp-lg) {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.btn--primary {
+  border-radius: 0.3125em;
+  background-color: $red;
+  padding: 0.5em 1.5em;
+  color: $white;
+  border: none;
+  &:hover {
+    background-color: $hover-red;
+  }
+  &:focus {
+    outline: 0.4375em solid rgba(155, 26, 17, 0.1);
   }
 }
