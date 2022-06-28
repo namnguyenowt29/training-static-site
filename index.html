@@ -9,95 +9,143 @@
   </head>
   <body>
     <div class="homepage">
-      <div></div>
-      <div class="blog-list">
-        <div class="blog-list__item">
-          <img src="assets/images/Rectangle-1.jpg" alt="blog-item-1" />
-          <p class="title">
-            How to build the perfect grid system, and give it to your front-end
-            developer
-          </p>
-          <div class="views">
-            <object data="assets/icons/eye-icon.svg"></object>
-            <span>80,123</span>
-          </div>
-          <object
-            width="40"
-            height="40"
-            data="assets/icons/arrow-icon.svg"
-            class="view-more"
-          ></object>
+      <div class="homepage__header">
+        <a href="index.html">
+          <img
+            src="assets/icons/openwt-logo.svg"
+            class="logo"
+            alt="openwt-logo"
+          />
+        </a>
+        <a href="#">
+          <button class="btn--primary">Start a new project</button>
+        </a>
+      </div>
+
+      <div class="homepage__introduction">
+        <h1>Improve collaboration between designers and developers</h1>
+      </div>
+      <div class="homepage__news">
+        <div class="controller">
+          <h2>Our last advices</h2>
+          <span>See all</span>
         </div>
 
-        <div class="blog-list__item">
-          <img src="assets/images/Rectangle-2.jpg" alt="blog-item-2" />
-          <div class="overlay">
-            <p class="title">Sass variables and mixins to improve your css</p>
-            <object
-              width="40"
-              height="40"
-              data="assets/icons/arrow-icon.svg"
-              class="view-more"
-            ></object>
-          </div>
-        </div>
-
-        <div class="blog-list__item">
-          <img src="assets/images/Rectangle-3.jpg" alt="blog-item-3" />
-          <div class="blog-description">
-            <p class="title">
-              Meetings on a regular basis: agile methodology and the way to
-              follow development sprints
+        <div class="news-list">
+          <div class="news-list__item news-list__item--vertical">
+            <img
+              src="assets/images/Rectangle-1.jpg"
+              class="thumbnail"
+              alt="blog-item-1"
+            />
+            <div class="overlay"></div>
+            <p>
+              How to build the perfect grid system, and give it to your
+              front-end developer
             </p>
-            <div class="views">
-              <object data="assets/icons/eye-icon.svg"></object>
+            <div class="view">
+              <img src="assets/icons/eye-icon.svg" alt="eye-icon" />
               <span>80,123</span>
             </div>
-            <object
-              width="40"
-              height="40"
-              data="assets/icons/arrow-icon.svg"
+            <img
+              src="assets/icons/arrow-icon.svg"
+              alt="arrow-icon"
               class="view-more"
-            ></object>
+            />
+            <img
+              src="assets/icons/white-arrow.svg"
+              alt="arrow-icon"
+              class="view-more--white"
+            />
           </div>
-        </div>
 
-        <div class="blog-list__item">
-          <img src="assets/images/Rectangle-4.jpg" alt="blog-item-4" />
-          <div class="overlay">
-            <p class="title">Sass variables and mixins to improve your css</p>
-            <object
-              width="40"
-              height="40"
-              data="assets/icons/arrow-icon.svg"
+          <div class="news-list__item">
+            <img
+              src="assets/images/Rectangle-2.jpg"
+              class="thumbnail"
+              alt="blog-item-2"
+            />
+            <div class="overlay"></div>
+            <p>Sass variables and mixins to improve your css</p>
+            <img
+              src="assets/icons/white-arrow.svg"
+              alt="arrow-icon"
               class="view-more"
-            ></object>
+            />
           </div>
-        </div>
 
-        <div class="blog-list__item">
-          <img src="assets/images/Rectangle-5.jpg" alt="blog-item-5" />
-          <div class="overlay">
-            <p class="title">Sass variables and mixins to improve your css</p>
-            <object
-              width="40"
-              height="40"
-              data="assets/icons/arrow-icon.svg"
-              class="view-more"
-            ></object>
+          <div class="news-list__item news-list__item--horizontal">
+            <img
+              src="assets/images/Rectangle-3.jpg"
+              class="thumbnail"
+              alt="blog-item-3"
+            />
+            <div class="overlay"></div>
+            <div class="content">
+              <p>
+                Meetings on a regular basis: agile methodology and the way to
+                follow development sprints
+              </p>
+              <div class="view">
+                <img src="assets/icons/eye-icon.svg" alt="eye-icon" />
+                <span>80,123</span>
+              </div>
+              <img
+                src="assets/icons/arrow-icon.svg"
+                alt="arrow-icon"
+                class="view-more"
+              />
+              <img
+                src="assets/icons/white-arrow.svg"
+                alt="arrow-icon"
+                class="view-more--white"
+              />
+            </div>
           </div>
-        </div>
 
-        <div class="blog-list__item">
-          <img src="assets/images/Rectangle-6.jpg" alt="blog-item-6" />
-          <div class="overlay">
-            <p class="title">Sass variables and mixins to improve your css</p>
-            <object
-              width="40"
-              height="40"
-              data="assets/icons/arrow-icon.svg"
+          <div class="news-list__item">
+            <img
+              src="assets/images/Rectangle-4.jpg"
+              class="thumbnail"
+              alt="blog-item-4"
+            />
+            <div class="overlay"></div>
+            <p>Sass variables and mixins to improve your css</p>
+            <img
+              src="assets/icons/white-arrow.svg"
+              alt="arrow-icon"
               class="view-more"
-            ></object>
+            />
+          </div>
+
+          <div class="news-list__item">
+            <img
+              src="assets/images/Rectangle-5.jpg"
+              class="thumbnail"
+              alt="blog-item-5"
+            />
+            <div class="overlay"></div>
+            <p>Sass variables and mixins to improve your css</p>
+            <img
+              src="assets/icons/white-arrow.svg"
+              alt="arrow-icon"
+              class="view-more"
+            />
+          </div>
+
+          <div class="news-list__item">
+            <img
+              src="assets/images/Rectangle-6.jpg"
+              class="thumbnail"
+              alt="blog-item-6"
+            />
+            <div class="overlay"></div>
+            <p>Sass variables and mixins to improve your css</p>
+            <img
+              src="assets/icons/white-arrow.svg"
+              alt="arrow-icon"
+              class="view-more"
+            />
           </div>
         </div>
       </div>
