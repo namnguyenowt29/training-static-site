@@ -8,9 +8,10 @@
       padding: 0em 0.8em;
     }
     & h1 {
-      margin: 4.5em em 3.43em;
+      margin: 2.57em 0em 1.96em;
       @include smallest {
         font-size: 1.25rem;
+        margin: 2em 0em 1.7em;
       }
     }
 
@@ -23,7 +24,7 @@
       border: $input-border;
       @include text-style(1em, 400, 1.17em, rgba(0, 0, 0, 0.6));
       @include smallest {
-        padding: 0.93em 1.25em;
+        padding: 1em 1.3em;
         font-size: 0.75rem;
       }
     }

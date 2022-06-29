@@ -497,7 +497,7 @@ $lg-row-height: 180px;
   padding: 0.5em 1.5em;
   border: none;
   @include smallest {
-    font-size: 0.75rem;
+    font-size: 0.625rem;
   }
   &--primary {
     background-color: $red;
