@@ -45,11 +45,15 @@ $lg-row-height: 180px;
 
 .homepage .homepage__news {
   background-color: $light-gray;
-  padding-top: 4vh;
-  padding-bottom: 5vh;
+  padding-top: 3em;
+  padding-bottom: 3.5em;
+  @media (min-width: $bp-sm) and (max-width: $bp-lg) {
+    padding-top: 2.5em;
+    padding-bottom: 3em;
+  }
   @media (min-width: 280px) and (max-width: $bp-sm) {
-    padding-top: 2vh;
-    padding-bottom: 3vh;
+    padding-top: 2em;
+    padding-bottom: 2.5em;
   }
   .controller {
     display: flex;
@@ -83,7 +87,13 @@ $lg-row-height: 180px;
     &__item {
       background-color: $white;
       position: relative;
-      padding: 1.5625vw;
+      padding: 1.5em;
+      @media (min-width: $bp-sm) and (max-width: $bp-lg) {
+        padding: 1.2em;
+      }
+      @media (min-width: 280px) and (max-width: $bp-sm) {
+        padding: 0.9em;
+      }
       .overlay {
         position: absolute;
         top: 0;
@@ -92,17 +102,20 @@ $lg-row-height: 180px;
         bottom: 0;
         background-color: $black;
         opacity: 0.4;
-        margin: 1.5625vw;
+        margin: 1.5em;
         border-radius: 0.3125em;
+        @media (min-width: $bp-sm) and (max-width: $bp-lg) {
+          margin: 1.2em;
+        }
+        @media (min-width: 280px) and (max-width: $bp-sm) {
+          margin: 0.9em;
+        }
       }
       .thumbnail {
         border-radius: 0.3125em;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        @include smallest {
-          object-fit: fill;
-        }
       }
       p {
         position: absolute;
@@ -158,16 +171,16 @@ $lg-row-height: 180px;
           right: 2em;
         }
         @include md {
-          bottom: 1.3em;
-          right: 1.5em;
+          bottom: 1.6em;
+          right: 1.7em;
         }
         @include sm {
-          bottom: 1em;
-          right: 1.3em;
+          bottom: 1.4em;
+          right: 1.4em;
         }
         @include smallest {
-          bottom: 0.7em;
-          right: 1em;
+          bottom: 1.2em;
+          right: 1.1em;
         }
       }
     }
@@ -222,11 +235,17 @@ $lg-row-height: 180px;
         background-color: unset;
         margin: unset;
         opacity: 1;
-        @media (min-width: 280px) and (max-width: $bp-lg) {
+        @media (min-width: $bp-sm) and (max-width: $bp-lg) {
           position: absolute;
           background-color: $black;
           opacity: 0.4;
-          margin: 1.5625vw;
+          margin: 1.2em;
+        }
+        @media (min-width: 280px) and (max-width: $bp-sm) {
+          position: absolute;
+          background-color: $black;
+          opacity: 0.4;
+          margin: 0.9em;
         }
       }
       p {
@@ -285,6 +304,11 @@ $lg-row-height: 180px;
       grid-column: 3 / 5;
       gap: 1.5em;
       display: flex;
+      &::after {
+        @media (min-width: $bp-lg) and (max-width: $bp-xl) {
+          display: none;
+        }
+      }
       @media (min-width: 280px) and (max-width: $bp-lg) {
         grid-column: unset;
       }
